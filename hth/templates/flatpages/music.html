@@ -1,0 +1,13 @@
+{% extends 'discography/base.html' %}
+
+{% block page_title %}{{ flatpage.title }} | {{ block.super }}{% endblock %}
+{% block page_id %}{{ block.super }}-{{ flatpage.title|slugify }}{% endblock %}
+{% block page_class %}{{ block.super }} flat-page{% endblock %}
+
+{% block breadcrumb_nav %}
+    {{ block.super }}
+    <li class="current-page">{{ flatpage.title }}</li>
+{% endblock %}
+
+{% block header_content %}<h2>{{ flatpage.title }}</h2>{% endblock %}
+{% block article_content %}{{ flatpage.content }}{% endblock %}

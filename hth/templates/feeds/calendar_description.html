@@ -1,0 +1,20 @@
+{% load calendar_tags contact_tags fb_versions %}
+
+{% if obj.location %}
+    <p><strong>Location</strong>: {% contactlink obj.location %},
+    <span class="city">{{ obj.location.city }}, {{ obj.location.region }}</span>.</p>
+{% endif %}
+
+{% if obj.upcoming %}
+{% if obj.cost or obj.ticket_url %}
+    <p>{% if obj.cost %}<strong>Cost</strong>: {{ obj.cost }}.{% endif %}
+       {% if obj.ticket_url %}<a href="{{ obj.ticket_url }}">Buy tickets</a>{% endif %}
+    </p>
+{% endif %}
+{% endif %}
+
+{% if obj.poster %}
+    <p><img src="{% version obj.poster 'medium' %}" alt="{{ obj.title }} poster"/>
+{% endif %}
+
+{{ obj.description|safe }}

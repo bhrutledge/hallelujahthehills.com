@@ -1,0 +1,11 @@
+{% load fb_versions discography_tags %}
+
+{% if release %}
+
+{% if artwork and release.artwork %}
+<p class="image {{ artwork }}"><a href="{{ release.get_absolute_url }}" rel="gallery"><img src="{% version release.artwork artwork %}" alt="{{ release.title }}"/></a></p>
+{% endif %}
+
+<p>{% releaselink release %}</p>
+
+{% endif %}

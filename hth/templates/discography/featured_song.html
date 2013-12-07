@@ -1,0 +1,17 @@
+{% load fb_versions discography_tags %}
+
+{% if song %}
+
+{% if artwork and song.artwork %}
+<a href="{{ song.get_absolute_url }}" rel="gallery"><img src="{% version song.artwork artwork %}" alt="{{ song.title }}"/></a>
+{% endif %}
+
+<p class="song">{% songlink song %}
+{% if song.tracks.count %}
+{% with song.parent as release %}
+    <br /><span class="from-link">from <a href="{{ release.get_absolute_url }}">{{ release }}</a></span>
+{% endwith %}
+{% endif %}
+</p>
+
+{% endif %}

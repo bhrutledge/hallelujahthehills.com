@@ -1,0 +1,104 @@
+{% extends 'calendar/base.html' %}
+{% load calendar_tags contact_tags discography_tags fb_versions %}
+
+{% block page_title %}{{ event }} | {{ block.super }}{% endblock %}
+{% block page_id %}{{ block.super }}-{{ event.slug }}{% endblock %}
+{% block page_class %}{{ block.super }} detail-page {% if event.poster %}artwork-page{% endif %}{% endblock %}
+
+{## BREADCRUMBS ##}
+
+{% block breadcrumb_nav %}
+{{ block.super }}
+
+{% if not event.is_upcoming %}
+{% with event.start_date|date:'Y' as year %}
+    <li><a href="{% url calendar_archive year %}">{{ year }}</a></li>
+{% endwith %}
+{% endif %}
+
+{% if event.parent %}
+    <li><a href="{{ event.parent.get_absolute_url }}">{{ event.parent }}</a></li>
+{% endif %}
+
+<li class="current-page">{{ event }}</li>
+{% endblock %}
+
+{## HEADER ##}
+
+{% block header_content %}
+{% if event.poster %}
+    <div id="artwork" class="figure medium">
+        {% spaceless %}
+        <a href="{% version event.poster 'large' %}">
+            <img src="{% version event.poster 'medium' %}" alt="{{ event.title }} poster"/>
+        </a>
+        {% endspaceless %}
+    </div>
+{% endif %}
+
+    <h2>{% if event.name %}{{ event.name }}: {% endif %}{{ event.dates }}</h2>
+    
+    {% if event.location or event.cost %}
+    <p>
+    {% if event.location %}
+        <strong>Location</strong>: {% contactlink event.location %},
+        <span class="city">{{ event.location.city }}, {{ event.location.region }}</span>.
+    {% endif %}
+    {% if event.cost %}
+        <br /><strong>Cost</strong>: {{ event.cost }}.
+        {% if event.ticket_url %}
+        {% spaceless %}
+        <span class="icon-links">
+            <a href="{{ event.ticket_url }}" title="Tickets">
+                <img class="icon" src="{{ STATIC_URL }}img/money_gray.png" alt="Tickets" />
+            </a>
+        </span>
+        {% endspaceless %}
+        {% endif %}
+    {% endif %}
+    </p>
+    {% endif %}
+    
+    <ul id="section-nav" class="nav">
+    {% with event as object %}
+    {% include 'bandsite/attachment_nav.html' %}
+    {% endwith %}
+    </ul>
+{% endblock %}
+
+{## ARTICLE ##}
+
+{% block article_content %}
+{% if event.description %}
+    <div id="description" class="section">
+        {{ event.description|safe }}
+    </div>
+{% endif %}
+
+{% if event.children.published.count %}
+    <div id="events" class="section">
+        <h3>Dates</h3>
+        {% events from event.children.published format "short" %}
+    </div>
+{% endif %}
+
+{% if event.tracks.count %}
+    <div id="songs" class="section">
+        <h3>Songs</h3>
+        <ol class="track-list object-list">
+        {% for track in event.tracks.all %}
+        {% with track.song as song %}
+            <li class="song">{% songlink song %}</li>
+        {% endwith %}
+        {% endfor %}
+        </ol>
+    </div>
+{% endif %}
+
+{% with event as object %}
+{% include 'bandsite/attachment_section.html' %}
+{% endwith %}
+
+{% endblock %}
+
+{# TODO: Show other events in sidebar? #}

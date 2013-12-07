@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Music | {{ block.super }}{% endblock %}
+{% block page_id %}music{% endblock %}
+{% block page_class %}{{ block.super }} music-page{% endblock %}
+
+{% block breadcrumb_nav %}
+    <li><a href="{% url home %}">Home</a></li>
+    <li><a href="{% url music %}">Music</a></li>
+{% endblock %}

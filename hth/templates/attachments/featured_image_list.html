@@ -1,0 +1,10 @@
+{% load attachment_items fb_versions %}
+
+<ul class="image-list object-gallery">
+{% for image in image_list %}
+    <li class="image thumbnail">
+        {% imageitem image %}
+        {% if image.parent %}<p class="from-link">from <a href="{{ image.parent.get_absolute_url }}">{{ image.parent }}</a></p>{% endif %}
+    </li>
+{% endfor %}
+</ul>

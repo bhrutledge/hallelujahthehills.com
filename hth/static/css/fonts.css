@@ -1,0 +1,66 @@
+body
+{
+    font-family: "Bookman Old Style", 
+                 "Palatino Linotype", Palatino, "Book Antiqua", 
+                 "URW Bookman L", "URW Palladio L",
+                 Georgia, serif;    
+}
+
+h1, h2, h3, h4, h5, h6,
+th,
+label,
+.nav,
+.errorlist,
+.title,
+.message,
+.more-link,
+.object-gallery .from-link,
+#article-header .icon-links,
+#article-footer,
+#jp-interface
+{
+    font-family: Geneva, Verdana,
+                 "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode",
+                 "Bitstream Vera Sans", "DejaVu Sans",
+                 sans-serif;
+}
+
+h1, h2, h3,
+form .button,
+#header-list-form .title,
+#body-header .nav li
+{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#article-header h2,
+.lyrics-page #article-content h3,
+#article-content .object-list h3
+{
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+h2, h3, h4, h5, h6,
+th,
+strong
+{
+    font-weight: normal;
+}
+
+a
+{
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+#body-header h1 a:hover
+{
+    text-decoration: none;
+}

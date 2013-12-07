@@ -1,0 +1,64 @@
+body
+{
+    color: #101010;
+    padding-left: 20px;
+}
+
+a
+{
+    color: #101010;
+}
+
+h1 a
+{
+    color: #5C2424;
+}
+
+img,
+object
+{
+    border-color: #5C2424;
+}
+
+#body-header,
+#body-article,
+#body-footer
+{
+    margin: 0;
+}
+
+#body-header h1
+{
+    padding-left: 20px;
+}
+
+#body-header .nav,
+#header-list-form,
+#footer-contact-form,
+#footer-links,
+#article-footer,
+.more-link
+{
+    display: none;
+}
+
+#article-header #section-nav
+{
+    height: 0;
+}
+
+#article-header #section-nav li
+{
+    display: none;
+}
+
+body#news #article-content,
+body#video #article-content
+{
+    margin: 0;
+}
+
+body#video #article-content object
+{
+    margin: 0 0 20px 0;
+}

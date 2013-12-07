@@ -1,0 +1,26 @@
+{% extends 'posts/base.html' %}
+
+{% block page_title %}{{ post }} | {{ block.super }}{% endblock %}
+{% block page_id %}{{ block.super }}-{{ post.slug }}{% endblock %}
+{% block page_class %}{{ block.super }} detail-page{% endblock %}
+
+
+{% block breadcrumb_nav %}
+    {{ block.super }}
+    <li class="current-page">{{ post }}</li>
+{% endblock %}
+
+{% block header_content %}
+    <h2>{{ post }}</h2>
+    <p class="timestamp">Posted {% if post.author %}by {{ post.author.first_name }} {% endif %}on {{ post.publish_date|date }}</p>
+{% endblock %}
+
+{% block article_content %}    
+    <div>
+        {{ post.body|safe }}
+    </div>
+    
+    {% with post as object %}
+    {% include 'bandsite/attachment_section.html' %}
+    {% endwith %}
+{% endblock %}

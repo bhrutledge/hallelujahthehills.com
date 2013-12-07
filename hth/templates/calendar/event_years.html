@@ -1,0 +1,12 @@
+{% if archive_years %}
+    <p class="title">Archive:</p>
+    <ul id="page-nav" class="nav">
+    {% for archive_year in archive_years %}
+        {% if archive_year == current_year %}
+            <li class="current-page">{{ archive_year }}</li>
+        {% else %}
+            <li><a href="{% url calendar_archive archive_year %}">{{ archive_year }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endif %}

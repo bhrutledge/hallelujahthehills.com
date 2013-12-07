@@ -1,0 +1,33 @@
+{% extends 'discography/base.html' %}
+{% load discography_tags fb_versions %}
+
+{% block page_title %}Releases | {{ block.super }}{% endblock %}
+{% block page_id %}releases{% endblock %}
+{% block page_class %}{{ block.super }} list-page{% endblock %}
+
+{% block breadcrumb_nav %}
+    {{ block.super }}
+    <li class="current-page">Releases</li>
+{% endblock %}
+
+{% block header_content %}<h2>Releases</h2>{% endblock %}
+
+{% block article_content %}
+    {% if release_list %}    
+        <ul class="release-list object-gallery">
+        {% for release in release_list %}
+            <li class="image thumbnail">
+                {% spaceless %}
+                <a href="{{ release.get_absolute_url }}">
+                    <img src="{% version release.artwork 'thumbnail' %}" alt="{{ release.title }} cover" />
+                </a>
+                {% endspaceless %}
+                <p class="title">{{ release }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No releases.</p>
+    {% endif %}
+    <div class="clear"></div>
+{% endblock %}

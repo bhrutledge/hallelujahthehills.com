@@ -1,0 +1,28 @@
+{% extends 'flatpages/music.html' %}
+{% load fb_versions %}
+
+{% block article_content %}
+<ul class="image-list object-gallery">
+    {% with "/files/artwork/portal_front_l.jpg" as artwork %}
+    <li class="image thumbnail"><a href="{{ artwork }}" rel="gallery"><img src="{% version artwork 'thumbnail' %}" alt="Front cover"/></a></li>
+    {% endwith %}
+    {% with "/files/artwork/portal_back_l.jpg" as artwork %}
+    <li class="image thumbnail"><a href="{{ artwork }}" rel="gallery"><img src="{% version artwork 'thumbnail' %}" alt="Back cover"/></a></li>
+    {% endwith %}
+</ul>
+
+<p class="clear"><strong>&ldquo;Everybody Knows There's A Portal In The Backyard&rdquo;</strong> is a 27 minute song collage by Ryan Walsh that is available as a free download for those who purchase a hard copy (that is, a CD) of <em>Colonial Drones</em> by Hallelujah The Hills.</p>
+
+<h3>How To Obtain Your Download</h3>
+<ol>
+    <li>Open up your CD copy of <em>Colonial Drones</em>.</li>
+    <li>Hold the inner artwork up a mirror.</li>
+    <li>You will notice that there's a month and year somewhere on the inside album jacket.</li>
+    <li>Email this month and year to <a href="mailto:portal@hallelujahthehills.com">portal@hallelujahthehills.com</a>.</li>
+    <li>Within a week (hopefully within a day) you will receive a download link.</li>
+</ol>
+
+<p>Please enjoy the music and help keep this a special extra treat for those who purchase our album via the CD format. Why? Because we here at Hallelujah The Hills love full albums, we love accompanying artwork, and we love liner notes, but we also know that these are dying traditions. So, in the meanwhile, we'd like to reward those who cling to the sinking ship of the album/CD format and encourage people to purchase our new album in the exact context that we intended it to be experienced.</p>
+
+<p>See you in the portal.</p>
+{% endblock %}

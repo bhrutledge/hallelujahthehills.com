@@ -1,0 +1,32 @@
+{% extends 'calendar/base.html' %}
+{% load core_tags fb_versions %}
+
+{% block page_title %}Posters | {{ block.super }}{% endblock %}
+{% block page_id %}posters{% endblock %}
+{% block page_class %}{{ block.super }} list-page{% endblock %}
+
+{% block breadcrumb_nav %}
+    {{ block.super }}
+    <li class="current-page">Posters</li>
+{% endblock %}
+
+{% block header_content %}<h2>Posters</h2>{% endblock %}
+{% block article_content %}
+    <ul class="image-list object-gallery">
+    {% for event in event_list %}
+        <li class="image thumbnail">
+            {% spaceless %}
+            <a href="{% version event.poster 'large' %}" title="{{ event.title }}" rel="gallery-posters">
+                <img src="{% version event.poster 'thumbnail' %}" alt="{{ event.title }} poster" />
+            </a>
+            {% endspaceless %}
+            <p class="from-link">from <a href="{{ event.get_absolute_url }}">{{ event }}</a></p>
+        </li>
+    {% endfor %}
+    </ul>
+    <div class="clear"></div>
+{% endblock %}
+
+{% block page_nav %}
+    {% pagenav paginator page_obj %}
+{% endblock %}

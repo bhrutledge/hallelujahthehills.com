@@ -1,0 +1,7 @@
+{% spaceless %}
+{% if contact.website %}
+    <a href="{{ contact.website }}" class="name">{{ contact.name }}</a>
+{% else %}
+    <span class="name">{{ contact.name }}</span>
+{% endif %}
+{% endspaceless %}

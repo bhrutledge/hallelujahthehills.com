@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load core_tags attachment_items %}
+
+{% block page_title %}Video | {{ block.super }}{% endblock %}
+{% block page_id %}video{% endblock %}
+{% block page_class %}{{ block.super }} list-page{% endblock %}
+
+{% block breadcrumb_nav %}
+    <li><a href="{% url home %}">Home</a></li>
+    <li class="current-page">Video</li>
+{% endblock %}
+
+{% block header_content %}<h2>Video</h2>{% endblock %}
+{% block article_content %}
+    <ul class="video-list object-list">
+    {% for video in video_list %}
+        <li class="{{ video.object_type }} video">
+            <p>{% videoitem video %}
+            {% if video.parent %}<br /><span class="from-link">from <a href="{{ video.parent.get_absolute_url }}">{{ video.parent }}</a></span>{% endif %}
+            </p>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block page_nav %}
+    {% pagenav paginator page_obj %}
+{% endblock %}

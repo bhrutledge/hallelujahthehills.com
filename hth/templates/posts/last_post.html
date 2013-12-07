@@ -1,0 +1,5 @@
+<p class="title"><a href="{{ post.get_absolute_url }}" title="Permalink">{{ post }}</a></p>
+
+{{ post.body|safe }}
+
+<p class="timestamp">Posted {% if post.author %}by {{ post.author.first_name }} {% endif %}on {{ post.publish_date|date }}</p>

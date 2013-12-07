@@ -1,0 +1,39 @@
+{% extends 'discography/base.html' %}
+{% load discography_tags fb_versions %}
+
+{% block page_title %}Lyrics | {{ release }} | {{ block.super }}{% endblock %}
+{% block page_id %}{{ block.super }}-{{ release.slug }}{% endblock %}
+{% block page_class %}{{ block.super }} lyrics-page{% endblock %}
+
+{% block breadcrumb_nav %}
+    {{ block.super }}
+    <li><a href="{{ release.get_absolute_url }}">{{ release }}</a></li>
+    <li class="current-page">Lyrics</li>
+{% endblock %}
+
+{% block header_content %}<h2>{{ release }}</h2>{% endblock %}
+
+{% block article_content %}
+    
+    {% if release.tracks.count %}
+        <ol class="track-list object-list">
+            {% for track in release.tracks.all %}
+            {% with track.song as song %}
+                <li><h3>{{ song.title }}</h3>                    
+                    {% if song.lyrics %}
+                        <div class="section">
+                            {{ song.lyrics|safe }}
+                        </div>
+                    {% endif %}
+                    {% if song.credits %}
+                        <div class="credits section">
+                            {{ song.credits|safe }}
+                        </div>
+                    {% endif %}
+                </li>
+            {% endwith %}
+            {% endfor %}
+        </ol>
+    {% endif %}
+    
+{% endblock %}

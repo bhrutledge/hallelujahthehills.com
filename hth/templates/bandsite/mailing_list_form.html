@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load core_tags %}
+
+{% block page_title %}Email List | {{ block.super }}{% endblock %}
+{% block page_id %}mailing-list{% endblock %}
+
+{% block breadcrumb_nav %}
+    <li><a href="{% url home %}">Home</a></li>
+    <li class="current-page">Email List</li>
+{% endblock %}
+
+{% block header_content %}<h2>Email List</h2>{% endblock %}
+{% block article_content %}
+    <div id="mailing-list-form" class="section">
+    {% if mailing_list_form.is_valid %}
+        <p class="message">Thank you for signing up for our mailing list.  You should receive an email confirmation shortly.</p>
+    {% else %}
+        <form action="{% url mailing_list %}" method="post">
+            {% for field in mailing_list_form %}
+                <p>{{ field.label_tag }} {{ field }}</p>
+                {{ field.errors }}
+            {% endfor %}
+            <p><input type="submit" class="button" value="Sign Up" /></p>
+        </form>
+    {% endif %}
+    </div>
+{% endblock %}

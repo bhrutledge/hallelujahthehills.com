@@ -1,0 +1,799 @@
+/* 
+
+GRID
+
+Width: 690px
+Columns: 4 x 150px
+Gutter: 30px
+Font Size: 13px
+Line Height: 20px
+
+*/
+
+html
+{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+body
+{
+    margin: 0 auto;
+    padding: 0;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.clear
+{
+    clear: both;
+}
+
+/* FORMS */
+
+label
+{
+    display: block;
+}
+
+label.infield
+{
+    padding: 5px;
+    font-size: 11px;
+    line-height: 11px;
+}
+
+form .button
+{
+    border: none;
+    font-size: 12px;
+}
+
+form .errorlist
+{
+    margin-top: -20px !important;
+}
+
+form .errorlist li
+{
+    list-style: none;
+}
+
+
+/* NAV */
+
+ul.nav, ol.nav
+{
+    margin: 0;
+    padding: 0;
+}
+
+.nav li
+{
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 20px;
+}
+
+.nav li a
+{
+    display: block;
+}
+
+/* HEADER */
+
+#body-header
+{
+    position: relative;
+    width: 690px;
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+}
+
+#body-header h1
+{
+    float: left;
+    width: 690px;
+    margin: -10px 0 10px 0;
+    padding: 0;
+    font-size: 48px;
+    line-height: 60px;
+}
+
+#body-header .nav
+{
+    float: left;
+    width: 330px;
+    margin: 0;
+    padding: 0;
+}
+
+#body-header .nav li
+{
+    width: 82.5px;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#header-list-form
+{
+    float: left;
+    width: 330px;
+    height: 20px;
+    margin: 0 0 0 30px;
+    padding: 0;
+}
+
+#header-list-form p
+{
+    margin: 0 0 0 4px;
+    float: left;
+    font-size: 12px;
+}
+
+#header-list-form p.title
+{
+    margin: 0;
+}
+
+#header-list-form label
+{
+    display: none;
+}
+
+/* ARTICLE */
+
+#body-article
+{
+    position: relative;
+    width: 690px;
+    margin: 0 auto;
+    padding: 40px 20px 20px 20px;
+}
+
+/* Images */
+
+.thumbnail img
+{
+    width: 140px;
+    height: 140px;
+    margin: 0;   
+}
+
+.thumbnail img,
+.medium img
+{
+    border-width: 5px;
+    border-style: solid;
+}
+
+.large img
+{
+    width: 690px;
+    border-width: 10px;
+    border-style: solid;
+    margin-left: -10px;
+}
+
+a img.icon
+{
+    margin: 0;
+    border: none;
+    vertical-align: text-top;
+}
+
+#body-article .image > a
+{
+    display: block;
+    line-height: 0;
+}
+
+#body-article .image > p
+{
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Lists */
+
+#body-article ol
+{
+    margin: 0 0 20px 0;
+    padding: 0;
+    list-style: decimal outside;
+}
+
+#body-article ul
+{
+    margin: 0 0 20px 0;
+    padding: 0;
+    list-style: disc outside;
+}
+
+#body-article li
+{
+    margin: 0;
+    padding: 0;
+}
+
+/* Tables */
+
+#body-article table
+{
+    margin: -10px 0 10px -15px;
+    padding: 0;
+    border-collapse: separate;
+	border-spacing: 0;
+    text-align: left;
+}
+
+#body-article th,
+#body-article td
+{
+    padding: 10px 15px;
+    vertical-align: top;
+    text-align: left;
+}
+
+/* Other */
+
+#body-article iframe,
+#body-article object
+{
+    display: block;
+    margin: 0 auto 10px auto;
+    padding: 0;
+    border-width: 10px;
+    border-style: solid;
+}
+
+#body-article blockquote
+{
+    margin: 0 0 20px 0;
+    padding: 0 0 0 9px;
+    border-width: 0 0 0 1px;
+    border-style: dotted;
+}
+
+#body-article p,
+#body-article form,
+#body-article legend,
+#body-article .section,
+#body-article .figure
+{
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+#body-article .icon-links a
+{
+    padding: 2px;
+}
+
+#body-article .figure
+{
+    line-height: 0;
+}
+
+/* Page Content */
+
+#article-header
+{
+    display: none;
+    margin: 0 0 40px 0;
+    border-width: 0;
+    border-style: none;
+}
+
+.detail-page #article-header,
+.lyrics-page #article-header,
+.flat-page #article-header
+{
+    display: block;
+}
+
+#article-header h2
+{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+#article-header h2 .icon
+{
+    padding: 8px;
+}
+
+#article-header #section-nav
+{
+    width: 330px;
+    height: 20px;
+    margin: 20px 0 -1px 0;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+}
+
+#article-header #section-nav li
+{
+    margin: 0 9px 0 -4px;
+    padding: 0 4px 0 4px;
+    font-size: 12px;
+}
+
+#article-content
+{
+    margin: 0 auto;
+    padding: 0;
+}
+
+#article-content h3
+{
+    margin: 0 0 20px 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+#article-content h4
+{
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+#article-content .timestamp,
+#article-content .from-link
+{
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: bottom;
+}
+
+#article-content > .section
+{
+    margin-top: 40px;
+    max-width: 510px;
+}
+
+#article-content > .section:first-child
+{
+    margin-top: 0;
+}
+
+#article-content > .section h3
+{
+    width: 330px;
+    padding: 12px 0 7px 0;
+    border-width: 0 0 1px 0;
+    border-style: dotted;
+}
+
+#article-content ul.object-list
+{
+    margin: 0;
+    list-style: none;
+}
+
+#article-content .object-list > li
+{
+    margin: 0 0 20px 0;
+}
+
+#article-content > .object-list > li
+{
+    margin: 0 0 40px 0;
+    padding-top: 39px;
+    border-top-width: 1px;
+    border-top-style: dotted;
+}
+
+#article-content > .object-list > li:first-child
+{
+    padding-top: 0;
+    border-top-style: none;
+}
+
+#article-content ul.object-gallery
+{
+    float: left;
+    margin: 0 -30px 0 0;
+    list-style: none;
+}
+
+#article-content .object-gallery li
+{
+    position: relative;
+    float: left;
+    margin: 0 30px 30px 0;
+}
+
+#article-content .object-gallery li .from-link
+{
+    display: none;
+}
+
+#article-content .object-gallery li.thumbnail .from-link
+{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 132px;
+    margin: 0;
+    padding: 0 4px 0 4px;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: left;
+}
+
+#article-content .object-gallery li.thumbnail:hover .from-link
+{
+    display: block;
+}
+
+#article-content .release-list.object-gallery li
+{
+    width: 150px;
+    margin-bottom: 0;
+}
+
+#article-content > .message
+{
+    padding: 20px 0;
+    text-align: center;
+}
+
+#article-footer
+{
+    float: left;
+    clear: both;
+    margin: 20px 0;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+#article-footer p,
+#article-footer ul
+{
+    float: left;
+    margin: 0;
+}
+
+#article-footer li
+{
+    margin-left: 10px;
+}
+
+#breadcrumb-nav
+{
+    clear: both;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#breadcrumb-nav li
+{
+    margin: 0 6px 0 0;
+}
+
+#breadcrumb-nav li:before
+{
+    padding-right: 6px;
+    content: ">";
+}
+
+/* FOOTER */
+
+/* TODO: Stick to bottom */
+#body-footer
+{
+    position: relative;
+    width: 690px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+#body-footer h2
+{
+    margin: 20px 0;
+    padding: 0;
+    font-size: 13px;
+}
+
+#body-footer ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+#body-footer li
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#footer-contact
+{
+    float: left;
+    width: 330px;
+    margin: 0 30px 0 0;
+    padding: 0;
+}
+
+#footer-contact li
+{
+    margin-bottom: 20px;
+}
+
+#footer-contact-form textarea
+{
+    width: 330px;
+    height: 100px;
+}
+
+.js #footer-contact-form
+{
+    display: none;
+}
+
+#footer-links
+{
+    float: left;
+    width: 150px;
+    margin: 0 30px 0 0;
+    padding: 0;
+}
+
+#footer-friends
+{
+    float: left;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+/* PLAYER */
+
+#jp-interface
+{
+    display: none;
+    position: fixed; 
+    bottom: 0; 
+    left: 50%;
+    width: 690px;
+    margin-left: -355px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+#jp-controls
+{
+    float: left;
+}
+
+#jp-links
+{
+    padding-left: 5px;
+}
+
+#jp-song
+{
+    font-size: 12px;
+}
+
+#jp-time
+{
+    font-size: 10px;
+    float: right;
+}
+
+
+/* PAGES */
+
+body.artwork-page #artwork
+{
+    float: right;
+    width: 330px;
+    margin: 0 0 0 30px;
+}
+
+body.artwork-page #article-header h2,
+body.artwork-page #article-header p
+{
+    width: 330px;
+}
+
+body.artwork-page #events,
+body.artwork-page #video,
+body.artwork-page #photos
+{
+    clear: both;
+}
+
+body.music-page .credits
+{
+    font-size: 12px;
+}
+
+body.music-page #credits ul,
+body.music-page #included ul
+{
+    list-style: none;
+}
+
+body.calendar-page .object-table
+{
+    width: 720px;
+}
+
+body.calendar-page .object-table thead
+{
+    display: none;
+}
+
+body.calendar-page .object-table .dates
+{
+    width: 180px;
+}
+
+body#music #article-content
+{
+    margin-left: -30px;
+}
+
+body#music #article-content > .section
+{
+    float: right;
+    width: 330px;
+    margin: 0 0 0 30px;
+}
+    
+body#music #releases .release-list
+{
+    margin-bottom: 0;
+}
+
+body#press #article-content
+{
+    margin-right: -30px;
+}
+
+body#press #article-content > .section
+{
+    float: left;
+    width: 330px;
+    margin: 0 30px 0 0;
+}
+
+body#press #article-content > .section blockquote
+{
+    width: 291px;
+}
+
+body#press #release-press > .object-list > li
+{
+    margin-bottom: 40px;
+}
+
+body#songs #article-header,
+body#releases #article-header
+{
+    display: block;
+}
+
+body#songs #article-content > .object-list > li
+{
+    border: none;
+    padding-top: 0;
+}
+
+body#calendar #article-header
+{
+    display: block;
+}
+
+body#calendar #article-content .message
+{
+    padding-top: 0;
+}
+
+body#news #article-content,
+body#video #article-content
+{
+    width: 510px;
+}
+
+body#video #article-content object
+{
+    margin: 0 auto 20px auto;
+}
+
+body#home #article-header
+{
+    display: block;
+    margin-bottom: 39px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+}
+
+body#home #article-header h2
+{
+    margin-top: 20px;
+}
+
+body#home #article-footer,
+body#error-404 #article-footer
+{
+    display: none;
+}
+
+body#home #article-content
+{
+    margin-top: -40px;
+}
+
+body#home #article-content > .section
+{
+    position: relative;
+    clear: both;
+    width: 510px;
+    margin: 0;
+    padding: 39px 0 20px 180px;    
+    border-top-width: 1px;
+    border-top-style: dotted;
+}
+
+body#home #article-content > .section:first-child
+{
+    border: none;
+}
+
+body#home #article-content > .section h3
+{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body#about #members
+{
+    margin: 0 auto;
+}
+
+body#about #members thead
+{
+    display: none;
+}
+
+body#about #members th
+{
+    width: 390px;
+    padding: 0 15px 20px 0;
+    vertical-align: top;
+    text-align: right;
+}
+
+body#about #members td
+{
+    width: 390px;
+    padding: 0 0 20px 15px;
+    vertical-align: top;
+    text-align: left;
+}
+
+body#mailing-list #header-list-form,
+body#contact #footer-contact-form
+{
+    display: none;
+}

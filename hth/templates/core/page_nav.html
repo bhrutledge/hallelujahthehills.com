@@ -1,0 +1,10 @@
+<p class="title">Page:</p>
+<ul id="page-nav" class="nav">
+{% for page_num in paginator.page_range %}
+    {% if page_num == page_obj.number %}
+        <li class="current-page">{{ page_num }}</li>
+    {% else %}
+        <li><a href="{% if page_num == first_page %}.{% else %}?page={{ page_num }}{% endif %}">{{ page_num }}</a></li>
+    {% endif %}
+{% endfor %}
+</ul>

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Shows | {{ block.super }}{% endblock %}
+{% block page_id %}calendar{% endblock %}
+{% block page_class %}{{ block.super }} calendar-page{% endblock %}
+
+{% block breadcrumb_nav %}
+    <li><a href="{% url home %}">Home</a></li>
+    <li><a href="{% url calendar %}">Shows</a></li>
+{% endblock %}
+

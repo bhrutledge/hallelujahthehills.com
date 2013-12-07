@@ -1,0 +1,32 @@
+{% extends 'discography/base.html' %}
+{% load discography_tags fb_versions %}
+
+{% block page_title %}Songs | {{ block.super }}{% endblock %}
+{% block page_id %}songs{% endblock %}
+{% block page_class %}{{ block.super }} list-page{% endblock %}
+
+{% block breadcrumb_nav %}
+    {{ block.super }}
+    <li class="current-page">Songs</li>
+{% endblock %}
+
+{% block header_content %}<h2>Songs</h2>{% endblock %}
+
+{% block article_content %}
+    {% if song_list %}    
+        <ul class="track-list object-list">
+        {% for song in song_list %}
+            <li><p class="song">{% songlink song %}
+                {% if song.tracks.count %}
+                {% with song.parent as release %}
+                    <br /><span class="from-link">from <a href="{{ release.get_absolute_url }}">{{ release }}</a></span>
+                {% endwith %}
+                {% endif %}
+                </p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No songs.</p>
+    {% endif %}
+{% endblock %}

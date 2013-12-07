@@ -1,0 +1,148 @@
+html
+{
+    background-color: #101010;
+    border-color: #2A2A2A;
+}
+
+body
+{
+    color: #C2C2C2;
+}
+
+h1, h2, h3, h4, h5, h6,
+th,
+label,
+strong,
+legend,
+p.title,
+span.title
+{
+    color: #F5F5F5;
+}
+
+.track-list span.title,
+.release-list p.title
+{
+    color: #C2C2C2;
+}
+
+label.infield
+{
+    color: #404040;
+}
+
+a,
+.nav a:visited
+{
+    color: #F55F5F;
+}
+
+a:visited
+{
+    color: #B24646;
+}
+
+body#home li#home-link a,
+body.music-page li#music-link a,
+body.calendar-page li#calendar-link a,
+body.news-page li#news-link a,
+body#about li#about-link a,
+body#press li#press-link a,
+body#video li#video-link a,
+body#photos li#photos-link a,
+body#contact li#contact-link a
+{
+    color: #F5F5F5;
+}
+
+a img
+{
+    border-color: #5C2424;
+    outline-color: #5C2424;
+}
+
+a:hover img
+{
+    border-color: #B24646;
+    outline-color: #B24646;
+}
+
+.icon-links a:hover
+{
+    color: #F5F5F5;
+    background-color: #5C2424;
+    text-decoration: none;
+}
+
+blockquote
+{
+    border-color: #B24646;
+}
+
+form .button
+{
+    color: #F5F5F5;
+    background-color: #B24646;
+}
+
+form .button:hover
+{
+    background-color: #F55F5F;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#body-header h1 a,
+#body-header h1 a:visited
+{
+    color: #F5C1C1;
+}
+
+#body-header h1 a:hover
+{
+    color: #C2C2C2;
+}
+
+#body-article,
+#article-header,
+#section-nav,
+#article-content > .object-list > li,
+#article-content > .section,
+#article-content > .section h3
+{
+    border-color: #404040;
+}
+
+img,
+object,
+iframe
+{
+    border-color: #202020;
+    outline-color: #202020;
+}
+
+#article-footer,
+tbody.parent-event,
+tbody.child-event,
+#body-footer
+{
+    background-color: #202020;
+}
+
+#article-content .object-gallery li .from-link
+{
+    background-color: #202020;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#jp-interface
+{
+    color: #101010;
+    background-color: #C2C2C2;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.errorlist
+{
+    color: #F51616;
+}

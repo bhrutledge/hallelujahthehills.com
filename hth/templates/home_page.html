@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load discography_features post_tags calendar_tags attachment_features fb_versions %}
+
+{% block page_id %}home{% endblock %}
+
+{% block breadcrumb_nav %}
+    <li class="current-page">Home</li>
+{% endblock %}
+
+{% block header_content %}
+    <iframe width="640" height="390" src="http://www.youtube.com/embed/lPvL_n_z1S4" frameborder="0" allowfullscreen></iframe>           
+    <p style="text-align: center;">An acoustic performance of <em>Hungry Ghost Extraordinaire</em>, a song from our forthcoming third album.<br />Watch more on <a href="http://sleepovershows.com/hallelujah-the-hills">Sleepover Shows</a>.</p>
+    <h2>The Latest</h2>
+{% endblock %}
+
+{% block article_content %}
+<div id="music" class="section">
+    <h3>Music</h3>
+
+    {% featured_song %}
+    
+    <p class="more-link"><a href="{% url music %}">More music&hellip;</a></p>
+</div>
+
+<div id="calendar" class="section">
+    <h3>Shows</h3>
+    {% upcoming_events limit 5 %}
+    <p class="more-link"><a href="{% url calendar %}">Complete calendar&hellip;</a></p>
+</div>
+
+<div id="news" class="section">
+    <h3>News</h3>
+    {% last_post %}
+    <p class="more-link"><a href="{% url posts %}">More news&hellip;</a></p>
+</div>
+
+{%comment%}
+<div id="video" class="section">
+    <h3>Video</h3>
+    {% featured_videos limit 1 %}
+    <p class="more-link"><a href="{% url video %}">More videos&hellip;</a></p>
+</div>
+
+<div id="photos" class="section">
+    <h3>Photos</h3>
+    {% featured_images limit 6 %}
+    <p class="more-link clear"><a href="{% url photos %}">More photos&hellip;</a></p>
+</div>
+
+<div id="press" class="section">
+    <h3>Press</h3>
+    {% featured_links only "press" limit 1 %}
+    <p class="more-link"><a href="{% url press %}">More press&hellip;</a></p>
+</div>
+{%endcomment%}
+{% endblock %}

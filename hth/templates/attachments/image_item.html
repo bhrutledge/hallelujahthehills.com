@@ -1,0 +1,6 @@
+{% load fb_versions contact_tags %}
+{% spaceless %}
+<a href="{% version image.image 'large' %}" rel="gallery-{{ gallery_id }}" title="{{ image.title }}{% if image.creator %}, &copy; {{ image.creator }}{% endif %}">
+    <img src="{% version image.image 'thumbnail' %}" alt="{{ image.title }}" />
+</a>
+{% endspaceless %}

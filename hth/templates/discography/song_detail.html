@@ -1,0 +1,55 @@
+{% extends 'discography/base.html' %}
+{% load fb_versions discography_tags %}
+
+{% block page_title %}{{ song }} | {{ block.super }}{% endblock %}
+{% block page_id %}{{ block.super }}-{{ song.slug }}{% endblock %}
+{% block page_class %}{{ block.super }} detail-page {% if song.artwork %}artwork-page{% endif %}{% endblock %}
+
+{% block breadcrumb_nav %}
+    {{ block.super }}
+    {% if song.parent %}
+    <li><a href="{{ song.parent.get_absolute_url }}">{{ song.parent }}</a></li>
+    {% endif %}
+    <li class="current-page">{{ song }}</li>
+{% endblock %}
+
+{% block header_content %}
+{% if song.artwork %}
+    <div id="artwork" class="figure medium">
+        <a href="{% version song.artwork 'large' %}"><img src="{% version song.artwork 'medium' %}" alt="{{ song.title }} artwork"/></a>
+    </div>
+{% endif %}
+    <h2>{{ song }}</h2>
+    {% if song.audio %}<p class="icon-links"><a href="{{ song.audio.url }}" class="audio">Listen <img class="icon" src="{{ STATIC_URL }}img/sound_gray.png" alt="Audio" /></a></p>{% endif %}
+{% endblock %}
+
+{% block article_content %}
+    {% if song.tracks.count %}
+        <div id="included" class="section">
+            <h3>Included On</h3>
+            <ul class="track-list object-list">
+            {% for track in song.tracks.all %}
+                <li>{% releaselink track.parent %}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    
+    {% if song.lyrics %}
+        <div id="lyrics" class="section">
+            <h3>Lyrics</h3>
+            {{ song.lyrics|safe }}
+        </div>
+    {% endif %}
+    
+    {% if song.credits %}
+        <div id="credits" class="section">
+            <h3>Credits</h3>
+            {{ song.credits|safe }}
+        </div>
+    {% endif %}
+    
+    {% with song as object %}
+    {% include 'bandsite/attachment_section.html' %}
+    {% endwith %}
+{% endblock %}
