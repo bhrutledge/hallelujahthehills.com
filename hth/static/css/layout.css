@@ -551,7 +551,7 @@ a img.icon
     padding: 0;
 }
 
-#footer-friends
+#footer-subscribe
 {
     float: left;
     width: 150px;
@@ -660,6 +660,7 @@ body#music #releases .release-list
     margin-bottom: 0;
 }
 
+/*
 body#press #article-content
 {
     margin-right: -30px;
@@ -681,6 +682,7 @@ body#press #release-press > .object-list > li
 {
     margin-bottom: 40px;
 }
+*/
 
 body#songs #article-header,
 body#releases #article-header
@@ -705,7 +707,8 @@ body#calendar #article-content .message
 }
 
 body#news #article-content,
-body#video #article-content
+body#video #article-content,
+body#press #article-content
 {
     width: 510px;
 }

@@ -20,7 +20,7 @@
     </div>
 {% endif %}
     <h2>{{ song }}</h2>
-    {% if song.audio %}<p class="icon-links"><a href="{{ song.audio.url }}" class="audio">Listen <img class="icon" src="{{ STATIC_URL }}img/sound_gray.png" alt="Audio" /></a></p>{% endif %}
+    {% if song.audio %}<p class="icon-links"><a href="{{ song.audio.url }}" class="audio">Listen <img class="icon" src="{{ STATIC_URL }}img/sound_gray.png" alt="Audio" /></a><br /><small>Right-click, &ldquo;Save As&rdquo; to download</small></p>{% endif %}
 {% endblock %}
 
 {% block article_content %}

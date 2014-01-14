@@ -99,8 +99,8 @@ FILEBROWSER_SELECT_FORMATS = {
 FILEBROWSER_VERSIONS = {
     'fb_thumb': {'verbose_name': 'Admin Thumbnail', 'width': 60, 'height': 60, 'opts': 'crop upscale'},
     'thumbnail': {'verbose_name': 'Thumbnail', 'width': 150, 'height': 150, 'opts': 'crop'},
-    'medium': {'verbose_name': 'Medium', 'width': 320, 'height': '', 'opts': ''},
-	'large': {'verbose_name': 'Large', 'width': 640, 'height': 640, 'opts': ''},
+    'medium': {'verbose_name': 'Medium', 'width': 480, 'height': '', 'opts': ''},
+	'large': {'verbose_name': 'Large', 'width': 800, 'height': 800, 'opts': ''},
 }
 
 FILEBROWSER_ADMIN_VERSIONS = ['thumbnail', 'medium', 'large']
@@ -111,9 +111,9 @@ FILEBROWSER_CONVERT_FILENAME = False
 HONEYPOT_FIELD_NAME = 'email'
 
 BANDSITE_CONTACT_EMAILS = [
-    {'subject': 'General', 'email': 'band@hallelujahthehills.com', 'name': 'Ryan Walsh'},
-    {'subject': 'Booking', 'email': 'seth@nicodemusagency.com', 'name': 'Seth Fein, Nicodemus Agency'},
-    {'subject': 'PR', 'email': 'missmisra@misrarecords.com', 'name': 'Misra Records'},
+    {'subject': 'General', 'email': 'ryan@hallelujahthehills.com', 'name': 'Ryan Walsh'},
+    #{'subject': 'PR', 'email': 'ever@tinyhuman.com', 'name': 'Ever Kipp, Tiny Human'},
+    #{'subject': 'Booking', 'email': 'joe@nicodemusagency.com', 'name': 'Joe Smyth, Nicodemus Agency'},
     #{'subject': 'Website', 'email': 'brian@hallelujahthehills.com'},
 ]
 
