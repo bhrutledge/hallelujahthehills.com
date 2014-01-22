@@ -1,9 +1,0 @@
-<a href="{{ link.url }}" class="title">{{ link.title }}</a>
-{% if link.source_date %}<span class="timestamp"> &ndash; {{ link.source_date|date:'F j, Y' }}</span>{% endif %}
-{% if link.featured and link.description %}
-    {% if link.quote %}
-        <blockquote>{{ link.description|safe }}</blockquote>
-    {% else %}
-        {{ link.description|safe }}
-    {% endif %}
-{% endif %}

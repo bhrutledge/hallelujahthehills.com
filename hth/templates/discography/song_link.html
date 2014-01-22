@@ -1,9 +1,0 @@
-{% load static %}
-
-{% if song %}
-{% if song.has_details %}<a href="{{ song.get_absolute_url }}" class="title">{{ song }}</a>
-{% else %}<span class="title">{{ song }}</span>{% endif %}
-<span class="icon-links">
-{% if song.audio %}<a href="{{ song.audio.url }}" class="audio" title="Listen"><img class="icon" src="{% get_static_prefix %}img/sound_gray.png" alt="Audio" /></a>{% endif %}
-</span>
-{% endif %}

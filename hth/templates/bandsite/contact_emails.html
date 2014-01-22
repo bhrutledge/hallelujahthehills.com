@@ -1,7 +1,0 @@
-{% load core_tags %}
-
-<ul>
-{% for contact in contact_emails %}
-    <li><span class="title">{{ contact.subject }}</span><br/>{% if contact.name %}{{ contact.name }}<br />{% endif %}{% emaillink contact.subject contact.email %}</li>
-{% endfor %}
-</ul>
