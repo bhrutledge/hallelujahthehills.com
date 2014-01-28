@@ -49,6 +49,12 @@
                 <td</td>
             </tr>
         {% endif %}
+        {% if event.description %}
+            <tr>
+                <td></td>
+                <td colspan="3">{{ event.description|safe }}</td>
+            </tr>
+        {% endif %}
     </tbody>
 {% endfor %}
 </table>

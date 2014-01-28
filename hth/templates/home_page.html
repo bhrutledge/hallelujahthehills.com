@@ -29,11 +29,13 @@
     <p class="more-link"><a href="{% url calendar %}">Complete calendar&hellip;</a></p>
 </div>
 
+{% comment %}
 <div id="press" class="section">
     <h3>Press</h3>
     {% featured_links only "press" limit 1 %}
     <p class="more-link"><a href="{% url press %}">More press&hellip;</a></p>
 </div>
+{% endcomment %}
 
 <div id="news" class="section">
     <h3>News</h3>
