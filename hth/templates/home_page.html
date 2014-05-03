@@ -9,6 +9,10 @@
 
 {% block header_content %}
     <div class="figure large"><a href="http://hallelujahthehills.bandcamp.com" title="HtH on Bandcamp"><img src="/files/images/bird_banner.jpg" alt="" /></a></div>
+    <!--
+    <iframe width="670" height="376" src="//www.youtube.com/embed/8XK-vkOZh_c?rel=0" frameborder="0" allowfullscreen></iframe>
+    <p>New album out May 13, 2014! <a href="https://hallelujahthehills.bandcamp.com/album/have-you-ever-done-something-evil">Pre-Order now!</a></p>
+    -->
     <h2>The Latest</h2>
 {% endblock %}
 
@@ -23,6 +27,13 @@
 </div>
 {% endcomment %}
 
+<div id="news" class="section">
+    <h3>News</h3>
+    {% last_post %}
+    <p class="more-link"><a href="{% url posts %}">More news&hellip;</a></p>
+</div>
+
+
 <div id="calendar" class="section">
     <h3>Shows</h3>
     {% upcoming_events limit 5 %}
@@ -36,12 +47,6 @@
     <p class="more-link"><a href="{% url press %}">More press&hellip;</a></p>
 </div>
 {% endcomment %}
-
-<div id="news" class="section">
-    <h3>News</h3>
-    {% last_post %}
-    <p class="more-link"><a href="{% url posts %}">More news&hellip;</a></p>
-</div>
 
 <div id="video" class="section">
     <h3>Video</h3>

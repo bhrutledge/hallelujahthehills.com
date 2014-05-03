@@ -14,7 +14,11 @@ $(document).ready(function() {
     });
 
     $("#header-list-form label, #footer-contact-form label").inFieldLabels();
-    $(".video a").embedly({'method': 'afterParent', 'maxWidth': 490});
+    $(".video a").embedly({
+        'method': 'afterParent',
+        'maxWidth': 490,
+        'key': '0c47a14bd65b45caa78a762ef54b3149'
+    });
     
     /*
     // TODO: Research jQuery lookup caching
