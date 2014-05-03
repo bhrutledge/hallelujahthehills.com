@@ -12,49 +12,28 @@
     {% endif %}
     {% endif %}
         <tr>
-            <th class="dates"><a href="{{ event.get_absolute_url }}" class="title">{{ event.dates }}</a></th>
-            {% if event.name %}
-                <th colspan="2" class="name">{{ event.name }}</th>
-            {% else %}
+            <td class="details">
+                <span class="dates title">{{ event.dates }}</span>
             {% if event.location %}
-                <td class="city">{{ event.location.city }}, {{ event.location.region }}</td>
-                <td class="venue">{% contactlink event.location %}</td>
-            {% else %}
-                <td colspan="2"></td>
-            {% endif %}
-            {% endif %}
-            <td class="icon-links">
-            {% if event.poster %}
-                <a href="{% version event.poster 'large' %}" title="Poster"><img class="icon" src="{{ STATIC_URL }}img/picture_gray.png" alt="Poster"/></a>
-            {% endif %}
-            {% if event.is_upcoming and event.ticket_url %}
-                <a href="{{ event.ticket_url }}" title="Tickets"><img class="icon" src="{{ STATIC_URL }}img/money_gray.png" alt="Tickets"/></a>
-            {% endif %}
-            {% if event.tracks.count %}
-                <a href="{{ event.get_absolute_url }}#songs" title="Songs"><img class="icon" src="{{ STATIC_URL }}img/sound_gray.png" alt="Music"/></a>
-            {% endif %}
-            {% if event.images.count %}
-                <a href="{{ event.get_absolute_url }}#photos" title="Photos"><img class="icon" src="{{ STATIC_URL }}img/photos_gray.png" alt="Photos"/></a>
-            {% endif %}
-            {% if event.videos.count %}
-                <a href="{{ event.get_absolute_url }}#video" title="Video"><img class="icon" src="{{ STATIC_URL }}img/film_gray.png" alt="Video"/></a>
+                <br /><span class="venue">{% contactlink event.location %}</span>
+                <br /><span class="city">{{ event.location.city }}, {{ event.location.region }}</span>
             {% endif %}
             </td>
+            <td class="description">
+            {% if event.name %}
+                <p class="title">{{ event.name }}</p>
+            {% endif %}
+                {{ event.description|safe }}
+                <p class="icon-links">
+                {% if event.poster %}
+                    <a href="{% version event.poster 'large' %}" title="Poster"><img class="icon" src="{{ STATIC_URL }}img/picture_gray.png" alt="Poster"/></a>
+                {% endif %}
+                {% if event.is_upcoming and event.ticket_url %}
+                    <a href="{{ event.ticket_url }}" title="Tickets"><img class="icon" src="{{ STATIC_URL }}img/money_gray.png" alt="Tickets"/></a>
+                {% endif %}
+                </p>
+            </td>
         </tr>
-        {% if event.name and event.location %}
-            <tr>
-                <td></td>
-                <td class="city">{{ event.location.city }}, {{ event.location.region }}</td>
-                <td class="venue">{% contactlink event.location %}</td>
-                <td</td>
-            </tr>
-        {% endif %}
-        {% if event.description %}
-            <tr>
-                <td></td>
-                <td colspan="3">{{ event.description|safe }}</td>
-            </tr>
-        {% endif %}
     </tbody>
 {% endfor %}
 </table>

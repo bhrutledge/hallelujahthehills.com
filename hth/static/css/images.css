@@ -22,6 +22,12 @@
     background-repeat: no-repeat;
 }
 
+.images-on .figure a[href^="http"]
+{
+    padding: 0;
+    background-image: none;
+}
+
 .images-on a[href^="http"]:hover
 {
     background-position: 100% -22px;

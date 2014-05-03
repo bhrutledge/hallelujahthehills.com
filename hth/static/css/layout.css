@@ -241,6 +241,11 @@ a img.icon
 
 /* Other */
 
+img, object, video, iframe
+{
+    max-width: 100%;
+}
+
 #body-article iframe,
 #body-article object
 {
@@ -627,14 +632,14 @@ body.calendar-page .object-table
     width: 720px;
 }
 
-body.calendar-page .object-table thead
+.event-list thead
 {
     display: none;
 }
 
-body.calendar-page .object-table .dates
+.event-list td.details
 {
-    width: 180px;
+    width: 16em;
 }
 
 body.music-page .release-list li
@@ -645,12 +650,13 @@ body.music-page .release-list li
 body.music-page .release-list .image
 {
     float: left;
-    margin-right: 40px;
+    margin-right: 30px;
 }
 
 body.music-page .release-list .details
 {
     float: left;
+    width: 330px;
 }
 
 body.music-page .track-list li
@@ -680,6 +686,7 @@ body#calendar #article-content .message
     padding-top: 0;
 }
 
+body#music #article-content,
 body#news #article-content,
 body#video #article-content,
 body#press #article-content

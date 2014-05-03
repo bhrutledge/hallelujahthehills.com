@@ -456,6 +456,13 @@ body#calendar #article-header
     display: block;
 }
 
+body#home #article-header p
+{
+    font-size: 1.5em;
+    line-height: 2em;
+    text-align: center;
+}
+
 body#home #article-footer,
 body#error-404 #article-footer
 {
