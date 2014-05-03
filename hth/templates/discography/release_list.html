@@ -13,21 +13,33 @@
 {% block header_content %}<h2>Releases</h2>{% endblock %}
 
 {% block article_content %}
-    {% if release_list %}    
-        <ul class="release-list object-gallery">
-        {% for release in release_list %}
-            <li class="image thumbnail">
-                {% spaceless %}
+    <ul class="release-list object-list">
+    {% for release in release_list %}
+        <li>
+            {% spaceless %}
+            <div class="image thumbnail">
                 <a href="{{ release.get_absolute_url }}">
                     <img src="{% version release.artwork 'thumbnail' %}" alt="{{ release.title }} cover" />
                 </a>
-                {% endspaceless %}
-                <p class="title">{{ release }}</p>
-            </li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No releases.</p>
-    {% endif %}
-    <div class="clear"></div>
+            </div>
+            {% endspaceless %}
+            <div class="details">
+                <p class="title">
+                    <a href="{{ release.get_absolute_url }}">{{ release }}</a>
+                {% if release.is_released %}
+                    <br /><small>Released {% if release.label %}by {{ release.label.name }}{% endif %} on {{ release.release_date|date:'F j, Y' }}</small>
+                {% else %}
+                {% if release.release_date %}
+                    <br /><small>Available {% if release.label %}from {{ release.label.name }}{% endif %} on {{ release.release_date|date:'F j, Y' }}</small>
+                {% endif %}
+                {% endif %}
+                </p>
+            {% if release.buy %}
+                {{ release.buy|safe }}
+            {% endif %}
+            </div>
+            <div class="clear" ></div>
+        </li>
+    {% endfor %}
+    </ul>
 {% endblock %}

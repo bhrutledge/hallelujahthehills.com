@@ -1,4 +1,4 @@
-/* 
+/*
 
 GRID
 
@@ -116,7 +116,7 @@ ul.nav, ol.nav
     width: 82.5px;
     margin: 0;
     padding: 0;
-    
+
 }
 
 #header-list-form
@@ -161,7 +161,7 @@ ul.nav, ol.nav
 {
     width: 140px;
     height: 140px;
-    margin: 0;   
+    margin: 0;
 }
 
 .thumbnail img,
@@ -434,12 +434,6 @@ a img.icon
     display: block;
 }
 
-#article-content .release-list.object-gallery li
-{
-    width: 150px;
-    margin-bottom: 0;
-}
-
 #article-content > .message
 {
     padding: 20px 0;
@@ -564,8 +558,8 @@ a img.icon
 #jp-interface
 {
     display: none;
-    position: fixed; 
-    bottom: 0; 
+    position: fixed;
+    bottom: 0;
     left: 50%;
     width: 690px;
     margin-left: -355px;
@@ -643,46 +637,26 @@ body.calendar-page .object-table .dates
     width: 180px;
 }
 
-body#music #article-content
+body.music-page .release-list li
 {
-    margin-left: -30px;
+    clear: both;
 }
 
-body#music #article-content > .section
-{
-    float: right;
-    width: 330px;
-    margin: 0 0 0 30px;
-}
-    
-body#music #releases .release-list
-{
-    margin-bottom: 0;
-}
-
-/*
-body#press #article-content
-{
-    margin-right: -30px;
-}
-
-body#press #article-content > .section
+body.music-page .release-list .image
 {
     float: left;
-    width: 330px;
-    margin: 0 30px 0 0;
+    margin-right: 40px;
 }
 
-body#press #article-content > .section blockquote
+body.music-page .release-list .details
 {
-    width: 291px;
+    float: left;
 }
 
-body#press #release-press > .object-list > li
+body.music-page .track-list li
 {
-    margin-bottom: 40px;
+    margin-bottom: 0 !important;
 }
-*/
 
 body#songs #article-header,
 body#releases #article-header
@@ -755,7 +729,7 @@ body#home #article-content > .section
     clear: both;
     width: 510px;
     margin: 0;
-    padding: 39px 0 20px 180px;    
+    padding: 39px 0 20px 180px;
     border-top-width: 1px;
     border-top-style: dotted;
 }

@@ -37,7 +37,7 @@
 {% endif %}
 
     <h2>{% if event.name %}{{ event.name }}: {% endif %}{{ event.dates }}</h2>
-    
+
     {% if event.location or event.cost %}
     <p>
     {% if event.location %}
@@ -58,7 +58,7 @@
     {% endif %}
     </p>
     {% endif %}
-    
+
     <ul id="section-nav" class="nav">
     {% with event as object %}
     {% include 'bandsite/attachment_nav.html' %}

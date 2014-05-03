@@ -1,6 +1,8 @@
 {% extends 'discography/base.html' %}
 {% load discography_tags fb_versions %}
 
+{% block page_class %}{{ block.super }} list-page{% endblock %}
+
 {% block breadcrumb_nav %}
     <li><a href="{% url home %}">Home</a></li>
     <li class="current-page">Music</li>
@@ -9,44 +11,42 @@
 {% block header_content %}<h2>Music</h2>{% endblock %}
 
 {% block article_content %}
-    <div id="releases" class="section">
-        <h3>Releases</h3>
-        {% if release_list %}    
-            <ul class="release-list object-gallery">
-            {% for release in release_list %}
-                <li class="image thumbnail">
-                    {% spaceless %}
-                    <a href="{{ release.get_absolute_url }}">
-                        <img src="{% version release.artwork 'thumbnail' %}" alt="{{ release.title }} cover" />
-                    </a>
-                    {% endspaceless %}
-                    <p class="title">{{ release }}</p>
-                </li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p>No releases.</p>
-        {% endif %}
-        <div class="clear" ></div>
-    </div>
-    
-    <div id="songs" class="section">
-        <h3>Songs</h3>
-        {% if song_list %}    
-            <ul class="track-list object-list">
-            {% for song in song_list %}
-                <li><p class="song">{% songlink song %}
-                    {% if song.tracks.count %}
-                    {% with song.parent as release %}
-                        <br /><span class="from-link">from <a href="{{ release.get_absolute_url }}">{{ release }}</a></span>
-                    {% endwith %}
+    <ul class="release-list object-list">
+    {% for release in release_list %}
+        <li>
+            {% spaceless %}
+            <div class="image thumbnail">
+                <a href="{{ release.get_absolute_url }}">
+                    <img src="{% version release.artwork 'thumbnail' %}" alt="{{ release.title }} cover" />
+                </a>
+            </div>
+            {% endspaceless %}
+            <div class="details">
+                <p class="title">
+                    <a href="{{ release.get_absolute_url }}">{{ release }}</a>
+                {% if release.is_released %}
+                    <br /><small>Released {% if release.label %}by {{ release.label.name }}{% endif %} on {{ release.release_date|date:'F j, Y' }}</small>
+                {% else %}
+                {% if release.release_date %}
+                    <br /><small>Available {% if release.label %}from {{ release.label.name }}{% endif %} on {{ release.release_date|date:'F j, Y' }}</small>
+                {% endif %}
+                {% endif %}
+                </p>
+            {% if release.buy %}
+                {{ release.buy|safe }}
+            {% endif %}
+                <ul class="track-list object-list">
+                {% for track in release.tracks.all %}
+                {% with track.song as song %}
+                    {% if song.featured %}
+                    <li class="song">{% songlink song %}</li>
                     {% endif %}
-                    </p>
-                </li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p>No songs.</p>
-        {% endif %}
-    </div>
+                {% endwith %}
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="clear" ></div>
+        </li>
+    {% endfor %}
+    </ul>
 {% endblock %}

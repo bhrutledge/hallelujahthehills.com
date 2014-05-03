@@ -30,7 +30,7 @@
     <p>Available {% if release.label %}from {{ release.label.name }}{% endif %} on {{ release.release_date|date:'F j, Y' }}</p>
 {% endif %}
 {% endif %}
-    
+
     <ul id="section-nav" class="nav">
         {% with release as object %}
         {% include 'bandsite/attachment_nav.html' %}
