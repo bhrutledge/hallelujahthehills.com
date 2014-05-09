@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load discography_features post_tags calendar_tags attachment_features fb_versions %}
+{% load discography_features post_tags calendar_tags attachment_features flatblock_tags fb_versions %}
 
 {% block page_id %}home{% endblock %}
 
@@ -8,11 +8,7 @@
 {% endblock %}
 
 {% block header_content %}
-    <div class="figure large"><a href="http://hallelujahthehills.bandcamp.com" title="HtH on Bandcamp"><img src="/files/images/bird_banner.jpg" alt="" /></a></div>
-    <!--
-    <iframe width="670" height="376" src="//www.youtube.com/embed/8XK-vkOZh_c?rel=0" frameborder="0" allowfullscreen></iframe>
-    <p>New album out May 13, 2014! <a href="https://hallelujahthehills.bandcamp.com/album/have-you-ever-done-something-evil">Pre-Order now!</a></p>
-    -->
+    {% flatblock "home-feature" %}
     <h2>The Latest</h2>
 {% endblock %}
 
