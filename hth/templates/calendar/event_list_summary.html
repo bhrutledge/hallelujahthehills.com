@@ -14,12 +14,18 @@
         <tr>
             <td class="details">
                 <span class="dates title">{{ event.dates }}</span>
+            {% comment %}
             {% if event.location %}
                 <br /><span class="venue">{% contactlink event.location %}</span>
                 <br /><span class="city">{{ event.location.city }}, {{ event.location.region }}</span>
             {% endif %}
+            {% endcomment %}
             </td>
             <td class="description">
+            {% if event.location %}
+                <p class="title"><span class="venue">{% contactlink event.location %}</span>,
+                    <span class="city">{{ event.location.city }}, {{ event.location.region }}</span></p>
+            {% endif %}
             {% if event.name %}
                 <p class="title">{{ event.name }}</p>
             {% endif %}
