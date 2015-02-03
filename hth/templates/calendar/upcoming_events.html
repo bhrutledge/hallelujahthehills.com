@@ -6,21 +6,18 @@
         <tr>
             <td class="details">
                 <span class="dates title">{{ event.dates }}</span>
-            {% comment %}
-            {% if event.location %}
+                {% if event.location %}
                 <br /><span class="venue">{% contactlink event.location %}</span>
                 <br /><span class="city">{{ event.location.city }}, {{ event.location.region }}</span>
-            {% endif %}
-            {% endcomment %}
+                {% endif %}
+                {% if event.is_upcoming and event.ticket_url %}
+                <p><a href="{{ event.ticket_url }}">Tickets</a></p>
+                {% endif %}
             </td>
             <td class="description">
-            {% if event.location %}
-                <p class="title"><span class="venue">{% contactlink event.location %}</span>,
-                    <span class="city">{{ event.location.city }}, {{ event.location.region }}</span></p>
-            {% endif %}
-            {% if event.name %}
+                {% if event.name %}
                 <p><span class="title">{{ event.name }}</span></p>
-            {% endif %}
+                {% endif %}
                 {{ event.description|safe }}
             </td>
         </tr>

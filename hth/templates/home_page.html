@@ -23,17 +23,16 @@
 </div>
 {% endcomment %}
 
-<div id="news" class="section">
-    <h3>News</h3>
-    {% last_post %}
-    <p class="more-link"><a href="{% url posts %}">More news&hellip;</a></p>
-</div>
-
-
 <div id="calendar" class="section">
     <h3>Shows</h3>
     {% upcoming_events limit 5 %}
     <p class="more-link"><a href="{% url calendar %}">Complete calendar&hellip;</a></p>
+</div>
+
+<div id="news" class="section">
+    <h3>News</h3>
+    {% last_post %}
+    <p class="more-link"><a href="{% url posts %}">More news&hellip;</a></p>
 </div>
 
 {% comment %}

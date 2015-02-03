@@ -14,30 +14,20 @@
         <tr>
             <td class="details">
                 <span class="dates title">{{ event.dates }}</span>
-            {% comment %}
-            {% if event.location %}
+                {% if event.location %}
                 <br /><span class="venue">{% contactlink event.location %}</span>
                 <br /><span class="city">{{ event.location.city }}, {{ event.location.region }}</span>
-            {% endif %}
-            {% endcomment %}
-            </td>
-            <td class="description">
-            {% if event.location %}
-                <p class="title"><span class="venue">{% contactlink event.location %}</span>,
-                    <span class="city">{{ event.location.city }}, {{ event.location.region }}</span></p>
-            {% endif %}
-            {% if event.name %}
-                <p class="title">{{ event.name }}</p>
-            {% endif %}
-                {{ event.description|safe }}
-                <p class="icon-links">
-                {% if event.poster %}
-                    <a href="{% version event.poster 'large' %}" title="Poster"><img class="icon" src="{{ STATIC_URL }}img/picture_gray.png" alt="Poster"/></a>
                 {% endif %}
                 {% if event.is_upcoming and event.ticket_url %}
-                    <a href="{{ event.ticket_url }}" title="Tickets"><img class="icon" src="{{ STATIC_URL }}img/money_gray.png" alt="Tickets"/></a>
+                <p><a href="{{ event.ticket_url }}">Tickets</a></p>
                 {% endif %}
-                </p>
+            </td>
+            <td class="description">
+                {% if event.name %}
+                <p class="title">{{ event.name }}</p>
+                {% endif %}
+
+                {{ event.description|safe }}
             </td>
         </tr>
     </tbody>
