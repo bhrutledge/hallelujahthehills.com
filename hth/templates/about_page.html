@@ -10,7 +10,14 @@
 
 {% block header_content %}<h2>About The Band</h2>{% endblock %}
 {% block article_content %}
-    <iframe width="640" height="480" src="//www.youtube.com/embed/bruppYsMkas" frameborder="0" allowfullscreen></iframe>
+    <style>
+        .embed-container { margin-bottom: 40px; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; }
+        .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .embed-container iframe { box-sizing: border-box; }
+    </style>
+    <div class='embed-container'>
+        <iframe src='https://www.youtube.com/embed/37hcP5bkvhc' frameborder='0' allowfullscreen></iframe>
+    </div>
     <div class="figure large"><img src="/files/images/hth_201304_outside_large.jpg" alt="Hallelujah The Hills" /></div>
     <p style="text-align: center;">Ryan Walsh, Ryan Connelly, Brian Rutledge, Nicholas Ward, Joseph Marrett</p>
     <p style="text-align: center;"><a href="http://en.wikipedia.org/wiki/Hallelujah_the_Hills">Hallelujah The Hills on Wikipedia</a></p>

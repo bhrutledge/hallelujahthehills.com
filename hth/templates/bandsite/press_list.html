@@ -12,24 +12,9 @@
 
 {% block header_content %}<h2>Press</h2>{% endblock %}
 {% block article_content %}
-    <div id="release-press" class="section">
-        <h3>Album Reviews</h3>
-        <ul class="release-list object-list">
-        {% for release in release_press %}
-            <li><p>&hellip;of {% releaselink release.release %}</p>
-                <ul class="press-list object-list">
-                {% for link in release.press %}
-                    <li class="{{ link.object_type }} link">{% linkitem link %}</li>
-                {% endfor %}
-                </ul>
-            </li>
-        {% endfor %}
-        </ul>
-    </div>
-    <div id="live-press" class="section">
-        <h3>Live Reviews</h3>
+    <div id="all-press" class="section">
         <ul class="press-list object-list">
-        {% for link in event_press %}
+        {% for link in all_press %}
             <li class="{{ link.object_type }} link">{% linkitem link %}</li>
         {% endfor %}
         </ul>
